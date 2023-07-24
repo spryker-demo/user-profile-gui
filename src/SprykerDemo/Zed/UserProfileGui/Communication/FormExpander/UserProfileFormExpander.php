@@ -7,16 +7,30 @@
 
 namespace SprykerDemo\Zed\UserProfileGui\Communication\FormExpander;
 
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class UserProfileFormExpander implements UserProfileFormExpanderInterface
 {
+    /**
+     * @var string
+     */
     protected const FIELD_PHOTO = 'photo';
-    protected const FIELD_PHOTO_LABEL = 'User photo';
+
+    /**
+     * @var string
+     */
+    protected const FIELD_PHOTO_LABEL = 'Photo';
+
+    /**
+     * @var string
+     */
     protected const FIELD_PHONE = 'phone';
-    protected const FIELD_PHONE_LABEL = 'User phone';
+
+    /**
+     * @var string
+     */
+    protected const FIELD_PHONE_LABEL = 'Phone';
 
     /**
      * @param \Symfony\Component\Form\FormBuilderInterface $builder
