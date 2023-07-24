@@ -10,7 +10,7 @@
         "spryker/user-extension": "^1.1.0"
     },
     "require-dev": {
-        "spryker/code-sniffer": "*"
+        "spryker/code-sniffer": "^0.17.18"
     },
     "autoload": {
         "psr-4": {

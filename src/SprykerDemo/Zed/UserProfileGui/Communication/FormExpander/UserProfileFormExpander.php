@@ -9,6 +9,7 @@ namespace SprykerDemo\Zed\UserProfileGui\Communication\FormExpander;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Url;
 
 class UserProfileFormExpander implements UserProfileFormExpanderInterface
 {
@@ -20,7 +21,7 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
     /**
      * @var string
      */
-    protected const FIELD_PHOTO_LABEL = 'Photo';
+    protected const FIELD_PHOTO_LABEL = 'Photo URL';
 
     /**
      * @var string
@@ -30,7 +31,7 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
     /**
      * @var string
      */
-    protected const FIELD_PHONE_LABEL = 'Phone';
+    protected const FIELD_PHONE_LABEL = 'Phone Number';
 
     /**
      * @param \Symfony\Component\Form\FormBuilderInterface $builder
@@ -53,6 +54,9 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
         $builder->add(static::FIELD_PHOTO, TextType::class, [
             'label' => static::FIELD_PHOTO_LABEL,
             'required' => false,
+            'constraints' => [
+                new Url(),
+            ],
         ]);
     }
 
