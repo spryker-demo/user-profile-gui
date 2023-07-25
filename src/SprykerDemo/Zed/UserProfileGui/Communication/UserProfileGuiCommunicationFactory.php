@@ -13,9 +13,9 @@ use SprykerDemo\Zed\UserProfileGui\Communication\FormExpander\UserProfileFormExp
 
 class UserProfileGuiCommunicationFactory extends AbstractCommunicationFactory
 {
- /**
-  * @return \SprykerDemo\Zed\UserProfileGui\Communication\FormExpander\UserProfileFormExpanderInterface
-  */
+    /**
+     * @return \SprykerDemo\Zed\UserProfileGui\Communication\FormExpander\UserProfileFormExpanderInterface
+     */
     public function createUserProfileFormExpander(): UserProfileFormExpanderInterface
     {
         return new UserProfileFormExpander();

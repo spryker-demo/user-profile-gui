@@ -9,6 +9,7 @@ namespace SprykerDemo\Zed\UserProfileGui\Communication\FormExpander;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Url;
 
 class UserProfileFormExpander implements UserProfileFormExpanderInterface
@@ -70,6 +71,12 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
         $builder->add(static::FIELD_PHONE, TextType::class, [
             'label' => static::FIELD_PHONE_LABEL,
             'required' => false,
+            'constraints' => [
+                new Regex([
+                    'pattern' => '/^\+?\d{1,}[\s\d-]{5,}$/',
+                    'message' => 'Please enter a valid phone number.',
+                ]),
+            ],
         ]);
     }
 }
