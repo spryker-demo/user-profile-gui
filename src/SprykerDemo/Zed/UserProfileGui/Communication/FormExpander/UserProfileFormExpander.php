@@ -9,6 +9,7 @@ namespace SprykerDemo\Zed\UserProfileGui\Communication\FormExpander;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\Url;
 
@@ -35,6 +36,11 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
     protected const FIELD_PHONE_LABEL = 'Phone Number';
 
     /**
+     * @var int
+     */
+    protected const MAX_LENGTH_PHOTO_URL = 255;
+
+    /**
      * @param \Symfony\Component\Form\FormBuilderInterface $builder
      *
      * @return void
@@ -57,6 +63,7 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
             'required' => false,
             'constraints' => [
                 new Url(),
+                new Length(['max' => static::MAX_LENGTH_PHOTO_URL]),
             ],
         ]);
     }
