@@ -83,6 +83,7 @@ class UserProfileFormExpander implements UserProfileFormExpanderInterface
                     'pattern' => '/^\+?\d{1,}[\s\d-]{5,}$/',
                     'message' => 'Please enter a valid phone number.',
                 ]),
+                new Length(['max' => 255]),
             ],
         ]);
     }
